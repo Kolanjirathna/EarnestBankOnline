@@ -1,7 +1,8 @@
-package com.test.repository;
+package com.er.repository;
 
 
-import com.test.entity.Employee;
+
+import com.er.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Repository;

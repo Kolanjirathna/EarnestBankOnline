@@ -1,4 +1,4 @@
-package com.test.responseload;
+package com.er.responseload;
 
 public class LoginResponse {
     String message;

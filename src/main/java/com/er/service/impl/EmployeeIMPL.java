@@ -1,11 +1,12 @@
-package com.test.service.impl;
+package com.er.service.impl;
 
-import com.test.dto.EmployeeDTO;
-import com.test.dto.LoginDTO;
-import com.test.entity.Employee;
-import com.test.repository.EmployeeRepo;
-import com.test.responseload.LoginResponse;
-import com.test.service.EmployeeService;
+
+import com.er.dto.EmployeeDTO;
+import com.er.dto.LoginDTO;
+import com.er.entity.Employee;
+import com.er.repository.EmployeeRepo;
+import com.er.responseload.LoginResponse;
+import com.er.service.EmployeeService;
 import jakarta.persistence.Column;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,14 +44,14 @@ public class EmployeeIMPL implements EmployeeService {
     @Override
     public LoginResponse loginEmployee(LoginDTO loginDTO) {
         String msg = "";
-        Employee employee1 = employeeRepo.findByEmail(loginDTO.getEmail());
+        Employee employee1 = employeeRepo.findByEmail(loginDTO.getLoginName());
         if (employee1 != null) {
             String password = loginDTO.getPassword();
             String encodedPassword = employee1.getPassword();
             System.out.println("Password"+encodedPassword);
             //Boolean isPwdRight = passwordEncoder.matches(password, encodedPassword);
             if (password!=null) {
-                Optional<Employee> employee = employeeRepo.findOneByEmailAndPassword(loginDTO.getEmail(), encodedPassword);
+                Optional<Employee> employee = employeeRepo.findOneByEmailAndPassword(loginDTO.getLoginName(), encodedPassword);
                 if (employee.isPresent()) {
                     return new LoginResponse("Login Success", true);
                 } else {

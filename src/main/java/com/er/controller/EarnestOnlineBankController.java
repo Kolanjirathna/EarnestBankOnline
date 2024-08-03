@@ -1,10 +1,12 @@
 package com.er.controller;
 
 
-import com.test.dto.EmployeeDTO;
-import com.test.dto.LoginDTO;
-import com.test.responseload.LoginResponse;
-import com.test.service.EmployeeService;
+
+import com.er.dto.EmployeeDTO;
+import com.er.dto.LoginDTO;
+
+import com.er.responseload.LoginResponse;
+import com.er.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
