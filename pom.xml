@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>com.test</groupId>
-    <artifactId>springwithReact</artifactId>
+    <artifactId>earnestBankOnline</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>springwithReact</name>
-    <description>springwithReact</description>
+    <name>earnestBankOnline</name>
+    <description>earnestBankOnline</description>
 
     <properties>
         <java.version>17</java.version>
