@@ -3,6 +3,7 @@ package com.er.dto;
 
 public class LoginDTO {
     private String loginName;
+    private String password;
 
     public String getLoginName() {
         return loginName;
@@ -19,8 +20,5 @@ public class LoginDTO {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    private String password;
-
 
 }
