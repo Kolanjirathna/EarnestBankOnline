@@ -19,8 +19,8 @@ public class EarnestOnlineBankController {
     @PostMapping(path="/save", consumes = "application/json")
     public String saveEmployee(@RequestBody SignInDTO employeeDTO)
     {
-        String id = employeeService.addEmployee(employeeDTO);
-        return id;
+        return employeeService.addEmployee(employeeDTO);
+
     }
     @PostMapping("/login")
     public ResponseEntity<String> loginEmployee(@RequestBody LoginDTO loginDTO)
