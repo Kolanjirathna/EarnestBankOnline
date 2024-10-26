@@ -1,8 +1,6 @@
 package com.er.dto;
 
-import lombok.*;
-@Setter
-@Getter
+
 public class SignInDTO {
 
     private String login;

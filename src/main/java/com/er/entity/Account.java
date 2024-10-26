@@ -22,7 +22,7 @@ public class Account {
     private Date accountEndDate;
     @Column(name = "State")
     private String State;
-    @Column(name = "AccountNo")
+    @Column(name = "adharNo")
     private Long adharNo;
     @Column(name = "City")
     private String city;

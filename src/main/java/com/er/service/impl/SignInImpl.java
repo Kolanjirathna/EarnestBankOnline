@@ -2,51 +2,33 @@ package com.er.service.impl;
 
 
 import com.er.dto.LoginDTO;
-import com.er.dto.SignInDTO;
-
-
+import com.er.entity.SignInPage;
 import com.er.repository.SignInRepo;
 import com.er.responseload.LoginResponse;
 import com.er.service.SignInService;
-import jakarta.persistence.Column;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
 @Service
-public class SignInIMPL implements SignInService {
+public class SignInImpl implements SignInService {
     @Autowired
     private SignInRepo signInRepo;
-    //@Autowired
-    // private PasswordEncoder passwordEncoder;
-    @Column(name = "employee_name", length = 255)
-    private String employeename;
-    @Column(name = "email", length = 255)
-    private String email;
-    @Column(name = "password", length = 255)
-    private String password;
+
 
     @Override
-    public String addEmployee(SignInDTO signInDTO) {
-       /* SignInDTO signInDTOsave = new SignInDTO(
-                signInDTOsave.getAddress(),
-                signInDTOsave.getAge(),
-                signInDTOsave.getEmail(),
-                signInDTOsave.getPassword()
-               // this.passwordEncoder.encode(employeeDTO.getPassword())
-        );*/
-        signInRepo.save(signInDTO);
-        return signInDTO.getName();
+    public String saveUser(SignInPage signInPage) {
+
+        signInRepo.save(signInPage);
+        return "Success";
     }
 
-    //EmployeeDTO employeeDTO;
 
     @Override
-    public LoginResponse loginEmployee(LoginDTO loginDTO) {
+    public LoginResponse loginUser(LoginDTO loginDTO) {
         String msg = "";
-        LoginDTO employee1 = signInRepo.findByEmail(loginDTO.getLoginName());
+        LoginDTO employee1 =  null;  // signInRepo.findByEmail(loginDTO.getLoginName());
         if (employee1 != null) {
             String password = loginDTO.getPassword();
             String encodedPassword = employee1.getPassword();

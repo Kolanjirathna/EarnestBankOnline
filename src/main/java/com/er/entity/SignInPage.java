@@ -1,42 +1,32 @@
 package com.er.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
 import java.util.Date;
-
 @Entity
-@Table(name = "SignInPage")
-@Setter
-@Getter
-@NoArgsConstructor
+@Table(name = "signinpage")
 public class SignInPage {
     @Id
-
-    @Column(name = "LoginId", length = 45)
-    private String loginId;
-    @Column(name = "Password", length = 255)
-    private String Password;
-    @Column(name = "Name", length = 255)
-    private String Name;
-    @Column(name = "Email", length = 255)
-    private String Email;
-    @Column(name = "Email", length = 255)
-    private String Address;
-    @Column(name = "Phone", length = 255)
-    private String Phone;
-    @Column(name = "Occupation", length = 255)
-    private String Occupation;
-    @Column(name = "Age", length = 255)
-    private int Age;
-    @Column(name = "AnnualIncome", length = 255)
-    private int AnnualIncome;
-    @Column(name = "Identity", length = 255)
-    private String Identity;
-    @Column(name = "Sex", length = 255)
-    private String Sex;
-    @Column(name = "LastUpdate", length = 255)
-    private Date LastUpdate;
+    int id;
+    @Column(name ="login")
+    private String login;
+    @Column(name ="password")
+    private String password;
+    @Column(name ="name")
+    private String name;
+    @Column(name ="email", length = 255)
+    private String email;
+    @Column(name ="address", length = 255)
+    private String address;
+    @Column(name ="phone", length = 255)
+    private String phone;
+    @Column(name ="occupation", length = 255)
+    private String occupation;
+    @Column(name ="age", length = 255)
+    private int age;
+    @Column(name ="identity", length = 255)
+    private String identity;
+    @Column(name ="sex", length = 255)
+    private String sex;
+    @Column(name ="lastupdate", length = 255)
+    private Date lastupdate;
 }
